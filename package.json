@@ -1,6 +1,6 @@
 {
   "name": "od-vscolors",
-  "description": "od-virtualscroll - colors example",
+  "description": "od-virtualscroll: colors example",
   "homepage": "https://dinony.github.io/od-vscolors/",
   "scripts": {
     "build": "ngc -p tsconfig-aot.json && rollup -c rollup.config.js",
