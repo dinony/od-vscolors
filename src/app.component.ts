@@ -37,13 +37,13 @@ export class TileData {
     }
   `],
   template: `
-    <od-virtual-scroll class="scroll-container" [vsData]="data$" [vsOptions]="options$">
+    <od-virtualscroll class="scroll-container" [vsData]="data$" [vsOptions]="options$">
       <ng-template let-item>
         <div class="tile" [style.background]="item.getColor()">
           <!--{{item.num}}-->
         </div>
       </ng-template>
-    </od-virtual-scroll>
+    </od-virtualscroll>
   `
 })
 export class AppComponent {
