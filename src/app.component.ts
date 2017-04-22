@@ -31,6 +31,7 @@ export class TileData {
     }
 
     /deep/ .od-scroll-container {
+      margin: 0 auto;
       display: flex;
       justify-content: center;
     }
