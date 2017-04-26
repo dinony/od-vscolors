@@ -14,37 +14,15 @@ export class TileData {
 
 @Component({
   selector: 'app-shell',
-  styles: [`
-    .scroll-container {
-      height: 100vh;
-    }
-
-    .tile {
-      box-sizing: border-box;
-      color: grey;
-      font-size: 9px;
-      display: inline-flex;
-      height: 50px;
-      width: 50px;
-      overflow: hidden;
-      border-radius: 100px;
-    }
-
-    /deep/ .od-scroll-container {
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-    }
-  `],
+  styleUrls: ['src/app.component.css'],
   template: `
-    <od-virtualscroll class="scroll-container" [vsData]="data$" [vsOptions]="options$">
+    <od-virtualscroll class="cell-container" [vsData]="data$" [vsOptions]="options$">
       <ng-template let-item>
         <div class="tile" [style.background]="item.getColor()">
           <!--{{item.num}}-->
         </div>
       </ng-template>
-    </od-virtualscroll>
-  `
+    </od-virtualscroll>`
 })
 export class AppComponent {
   private _rndNum = () => Math.floor(Math.random() * 255);
@@ -57,5 +35,5 @@ export class AppComponent {
     return acc;
   }, this._seed);
 
-  options$ = Observable.of({itemWidth: 56, itemHeight: 53, numAdditionalRows: 1});
+  options$ = Observable.of({itemWidth: 53, itemHeight: 52, numAdditionalRows: 1});
 }

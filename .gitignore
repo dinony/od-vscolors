@@ -1,6 +1,9 @@
 aot
 node_modules
-src/*.d.ts
-src/*.js
+src/**/*.d.ts
+src/**/*.js
 *.map
 *.gen.js
+tmpPrefix
+tmpBuild
+.vscode
