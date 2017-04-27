@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-.tile {
+.cell {
   display: inline-block;
   color: grey;
   height: 50px;

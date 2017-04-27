@@ -7,7 +7,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/range';
 import 'rxjs/add/operator/reduce';
 
-export class TileData {
+export class CellData {
   num: number;
   getColor: () => string;
 }
@@ -18,7 +18,7 @@ export class TileData {
   template: `
     <od-virtualscroll class="cell-container" [vsData]="data$" [vsOptions]="options$">
       <ng-template let-item>
-        <div class="tile" [style.background]="item.getColor()">
+        <div class="cell" [style.background]="item.getColor()">
           <!--{{item.num}}-->
         </div>
       </ng-template>
@@ -27,9 +27,9 @@ export class TileData {
 export class AppComponent {
   private _rndNum = () => Math.floor(Math.random() * 255);
 
-  private _seed: TileData[] = [];
+  private _seed: CellData[] = [];
 
-  data$: Observable<TileData[]> = Observable.range(0, 60000).reduce((acc, num) => {
+  data$: Observable<CellData[]> = Observable.range(0, 60000).reduce((acc, num) => {
     const bgColor = `rgba(${this._rndNum()}, ${this._rndNum()}, ${this._rndNum()}, ${Math.random()})`;
     acc.push({num, getColor: () => bgColor});
     return acc;
